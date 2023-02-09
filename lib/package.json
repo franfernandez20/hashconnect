@@ -1,18 +1,20 @@
 {
-  "name": "hashconnect",
-  "version": "0.2.4",
-  "description": "hashconnect interoperability library",
-  "author": "Tyler Coté <tyler@hashpack.app>, Nick Hanna <nick@hashpack.app>",
-  "repository": "https://github.com/Hashpack/hashconnect",
+  "name": "hedera-connect",
+  "version": "0.2.6",
+  "description": "hashconnect interoperability library wrapper",
+  "author": "Fco Fernández <franfernandez20@gmail.com>",
+  "repository": "https://github.com/franfernandez20/hashconnect",
   "license": "MIT",
-  "keywords": [
-    "hashgraph",
-    "hedera",
-    "wallet",
-    "crypto"
-  ],
+  "keywords": [],
   "main": "./dist/esm/main.js",
   "types": "./dist/esm/main.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/esm/main.js",
+      "require": "./dist/cjs/main.js"
+    },
+    "./package.json": "./package.json"
+  },
   "files": [
     "dist/"
   ],
@@ -49,7 +51,6 @@
     "yarn": "^1.22.17"
   },
   "dependencies": {
-    "@hashgraph/sdk": "^2.18.3",
     "buffer": "^6.0.3",
     "crypto-es": "^1.2.7",
     "crypto-js": "^4.1.1",
@@ -60,5 +61,8 @@
     "ts-typed-events": "3.0.0",
     "uuid": "^8.3.2",
     "ws": "^8.8.1"
+  },
+  "peerDependencies": {
+    "@hashgraph/sdk": "^2.18.3"
   }
 }
